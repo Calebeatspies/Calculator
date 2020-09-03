@@ -1,0 +1,14 @@
+# This calculates how many times the earth has rotated since a given date.
+from datetime import datetime,date
+
+now = date.today() #Make a variable and its date to current.
+#Gets user input of a date following the y-m-d format.
+user_bdate = input("Please enter your date of birth in Y-m-d format: ") 
+#strptime gets the date of the user input and compares it for the correct format.
+birthday = datetime.strptime(user_bdate, '%Y-%m-%d')
+#You get the current date and make it a string and change the format of current to y-m-d.
+today = datetime.strptime(str(now), '%Y-%m-%d')
+#Get the result of how many rotations by subtracting current by given date.
+result = (today - birthday)
+#Prints the sentence with the calculation result. 
+print("The earth has rotated" ,result.days, "times in your lifetime.")
